@@ -17,7 +17,6 @@ public class KlinikMain {
             System.out.print("Pilih: ");
             pilihan = sc.nextInt();
             sc.nextLine();
-
             switch (pilihan) {
                 case 1:
                     System.out.print("Nama Pasien : ");
@@ -28,14 +27,12 @@ public class KlinikMain {
                     String Kendala = sc.nextLine();
                     pasien psn = new pasien(nama, NIK, Kendala);
                     antrian.addfirst(psn);
-                    System.out.println(">> Pasien Masuk Ke dalam Antrian");
+                    System.out.println(" Pasien Masuk Ke dalam Antrian");
                     break;
-
                 case 2:
-                    System.out.println("-- Antrian Pesanan --");
+                    System.out.println("=== Antrian Pasien ===");
                     antrian.print();
                     break;
-
                 case 3:
                     String namaDihapus = antrian.head.data.nama;
                     if (antrian.isEmpty()) {
@@ -50,28 +47,23 @@ public class KlinikMain {
                     System.out.print("Durasi Layanan (jam): ");
                     int durasi = sc.nextInt();
                     sc.nextLine();
-
                     dokter dok = new dokter(idDokter, namaDokter);
                     tranksaksilayanan t = new tranksaksilayanan(pasienDilayani.nama,dok.idDokter,dok.nama,durasi);
                     transaksi.enqueue(t);
                     System.out.println(">> Pasien telah dilayani,transaksi berhasil dicatat");
-
                     } 
                     break;
                 case 4:
                     System.out.println("Jumlah pasien dalam antrian: " + antrian.size());
                     break;
-
                 case 5:
                     transaksi.tampilkanTransaksi();
                     System.out.println(">> Pasien telah dilayani,transaksi berhasil dicatat");
                     break;
-
                 case 0:
                     System.out.println("Terima kasih.");
                     break;
             }
-
         } while (pilihan != 0);
     }
 }

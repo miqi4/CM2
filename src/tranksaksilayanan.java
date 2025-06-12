@@ -11,14 +11,12 @@ public class tranksaksilayanan {
         this.durasilayanan = durasilayanan;
         this.biaya = hitunglayanan();
     }
-
     int hitunglayanan(){
         biaya = 50000;
         hasil = durasilayanan * biaya;
         return hasil;
     }
-
-    public void tampilkanTransaksi() {
+    public void tampilkanTx() {
         System.out.println("Nama Pasien: " + namaPasien);
         System.out.println("Durasi Layanan: " + durasilayanan + " jam");
         System.out.println("Biaya Layanan: Rp " + biaya);
